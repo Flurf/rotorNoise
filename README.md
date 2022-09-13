@@ -1,0 +1,2 @@
+# rotorNoise
+simple matlab code to estimate the loading noise of a generic propeller. The geometrical properties of the rotor are sorted by the Propeller class, the aerodynamical properties (Reynolds number, velocity vector ecc. for each section) are calculated through simple analytical function in the TTcalculator class, wich returns also the total Thrust of the blade. The local section cl and cd are calculated with Xfoil, thanks to 

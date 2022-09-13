@@ -1,10 +1,11 @@
 clc
 clear all
-%##################################################
+
+
 %% propeller data definition
 Rt = 8.5344;
 R0 = 0.8;
-b = 1;  %number of blades, 1 is correct just in hovering, total thrust has to be multiplied for 4
+b = 1;  %number of blades, 1 is correct just in hovering, total thrust has to be multiplied for number of blades
 rn = 80;
 chord = 0.4166616;
 rootpitch = 13.908;
@@ -14,6 +15,7 @@ airfoil = 'NACA0012';
 
 rotor = Propeller(Rt,R0,b,rn,chord,rootpitch,twist,airfoil);
 % %##################################################
+
 %% flight conditions data definition
 
 Texp = 53000; %[N]
@@ -22,6 +24,7 @@ Vf = 0;       %forward flight
 deltapsi = 360;     %360 is correct for hovering
 calc = TTcalculator(rotor,RPM,Vf,deltapsi,Texp);
 %%##################################################
+
 %% acoustic solvers definitions
 c=340 ;                     % speed of sound, [m/s]
 
@@ -70,6 +73,8 @@ end
 ls = ls.*(psi2pa * inch2m);   %from [lb/inch] to [Pa * m]
 %[p_rms_custom, db_custom] = schlegel(r,chord,psi,beta_custom,ls,R,sigma,teta,n,b,omega,c);
 %##################################################
+
+%% plots
 rsch = [0.093,0.25,0.4,0.55,0.75,0.85,0.90,0.95,1].*Rt;
 % figure (2)
 % plot(r,ls(:,60),'blue','LineWidth', 1.5)
@@ -80,16 +85,16 @@ rsch = [0.093,0.25,0.4,0.55,0.75,0.85,0.90,0.95,1].*Rt;
 %     hold on
 % end
 
-legend('experimental data')
-% plot([0.093,0.25,0.4,0.55,0.75,0.85,0.90,0.95,1].*Rt,Lphi60(i).*psi2pa*inch2m,'o-','LineWidth','1.5')
-ylabel('Load [Pa * m]','FontSize', 16)
-xlabel('radius [m]','FontSize', 16)
-grid on
-lgd= legend;
-lgd.FontSize = 16;
-xlim([0 9])
-ylim([-100 8300])
-ax = gca; 
-ax.FontSize = 16; 
+% legend('experimental data')
+% % plot([0.093,0.25,0.4,0.55,0.75,0.85,0.90,0.95,1].*Rt,Lphi60(i).*psi2pa*inch2m,'o-','LineWidth','1.5')
+% ylabel('Load [Pa * m]','FontSize', 16)
+% xlabel('radius [m]','FontSize', 16)
+% grid on
+% lgd= legend;
+% lgd.FontSize = 16;
+% xlim([0 9])
+% ylim([-100 8300])
+% ax = gca; 
+% ax.FontSize = 16; 
 
 

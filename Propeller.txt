@@ -1,0 +1,10 @@
+17 	#Radius of propeller [m]
+4	#number of blades
+6	#number of r/R i want to consider for one blade
+10	#geometric Aoa at root
+-8	#twist angle
+0.2 0.4 0.5 0.8 0.95 1	#r/R, if equal to 1 consider equally spaced
+0.9 1.2 3.4 4 3 2.5 3	#chord at r/R, if equal to %f consider constant
+2 3 5 8 10 7 4 5	#AoA at r/R, if equal 1 consider geometric root AoA + twist 
+
+

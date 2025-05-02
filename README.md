@@ -1,6 +1,6 @@
 # rotorNoise
-Simple matlab code to estimate the loading noise of a generic propeller. The geometrical properties of the rotor are sorted by the Propeller class, the aerodynamical properties (Reynolds number, velocity vector ecc.)  for each section are calculated through simple analytical function in the TTcalculator class, wich returns also the total Thrust of the propeller. 
-The local properties are then passed to the Schlegel function, wich implements the integral formula defined by [Schlegel](https://apps.dtic.mil/sti/citations/AD0645884).
+Simple matlab code to estimate the loading noise of a generic propeller. The geometrical properties of the rotor are sorted by the Propeller class, the aerodynamical properties (Reynolds number, velocity vector ecc.)  for each section are calculated through analytical functions in the TTcalculator class that also returns  the total Thrust of the propeller. 
+The local properties are then passed to the Schlegel function, which implements the integral formula defined by [Schlegel](https://apps.dtic.mil/sti/citations/AD0645884).
 The function returns the noise of the first 10 harmonics.
 The local cl and cd are calculated with [Xfoil](https://it.mathworks.com/matlabcentral/fileexchange/49706-xfoil-interface-updated), thanks to the matlab interface.
 
